@@ -1,0 +1,5 @@
+SELECT kode_barang,nama_barang,batch,
+SUM(CASE WHEN kategori_nf='IN' THEN total_qty ELSE 0 END)masuk,
+SUM(CASE WHEN kategori_nf='OUT' THEN total_qty ELSE 0 END)keluar ,
+SUM(total_qty)saldo,
+isi,satuan,kemasan FROM historipercobaan GROUP BY kode_barang,tanggal 

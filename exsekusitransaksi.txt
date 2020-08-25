@@ -1,0 +1,5 @@
+"SELECT kode_barang, nama_barang, batch,lokasi,qty,total_qty,"
+                 + " isi, satuan,kemasan "
+                 + "FROM" 
+                 + " transaksi WHERE kode_barang like  "+ testQuery +" GROUP BY kode_barang,batch,kemasan ";
+       

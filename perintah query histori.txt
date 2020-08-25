@@ -1,0 +1,4 @@
+CREATE VIEW histori AS
+SELECT barangmasuk_detail.kode_transaksi as kode_transaksi ,kode_barang,nama_barang,batch,qty,total_qty,isi,satuan,kemasan, nama_customer,tanggal FROM barangmasuk_detail INNER JOIN   dbbarangmasuk  ON barangmasuk_detail.kode_transaksi=dbbarangmasuk.kode_transaksi
+UNION ALL
+SELECT barangkeluar_detail.kode_transaksi as b , kode_barang,nama_barang,batch,qty*(-1),total_qty*(-1),isi,satuan,kemasan,nama_customer,tanggal FROM barangkeluar_detail INNER JOIN  dbbarangkeluar on barangkeluar_detail.kode_transaksi=dbbarangkeluar.kode_transaksi;

@@ -1,0 +1,4 @@
+CREATE VIEW transaksi AS
+SELECT kode_barang,nama_barang,batch,lokasi,qty,total_qty,isi,satuan,kemasan FROM barangmasuk_detail
+UNION ALL
+SELECT kode_barang,nama_barang,batch,lokasi,qty*(-1),total_qty*(-1),isi,satuan,kemasan FROM barangkeluar_detail;
